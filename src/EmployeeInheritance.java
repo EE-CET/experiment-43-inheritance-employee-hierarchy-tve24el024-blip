@@ -5,9 +5,9 @@ class Employee {
     int age;
     long phoneNumber;
     String address;
-    int salary;
+    double salary;
 
-    Employee(String name, int age, long phoneNumber, String address, int salary) {
+    Employee(String name, int age, long phoneNumber, String address, double salary) {
         this.name = name;
         this.age = age;
         this.phoneNumber = phoneNumber;
@@ -23,7 +23,7 @@ class Employee {
 class Officer extends Employee {
     String specialization;
 
-    Officer(String name, int age, long phoneNumber, String address, int salary, String specialization) {
+    Officer(String name, int age, long phoneNumber, String address, double salary, String specialization) {
         super(name, age, phoneNumber, address, salary);
         this.specialization = specialization;
     }
@@ -42,7 +42,7 @@ class Officer extends Employee {
 class Manager extends Employee {
     String department;
 
-    Manager(String name, int age, long phoneNumber, String address, int salary, String department) {
+    Manager(String name, int age, long phoneNumber, String address, double salary, String department) {
         super(name, age, phoneNumber, address, salary);
         this.department = department;
     }
@@ -67,7 +67,7 @@ public class EmployeeInheritance {
         long oPhone = sc.nextLong();
         sc.nextLine();
         String oAddress = sc.nextLine();
-        int oSalary = sc.nextInt();
+        double oSalary = sc.nextDouble();
         sc.nextLine();
         String specialization = sc.nextLine();
 
@@ -78,7 +78,7 @@ public class EmployeeInheritance {
         long mPhone = sc.nextLong();
         sc.nextLine();
         String mAddress = sc.nextLine();
-        int mSalary = sc.nextInt();
+        double mSalary = sc.nextDouble();
         sc.nextLine();
         String department = sc.nextLine();
 
