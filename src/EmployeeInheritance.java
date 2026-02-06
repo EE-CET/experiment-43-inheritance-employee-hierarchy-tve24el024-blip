@@ -7,7 +7,7 @@ class EmployeeInheritance {
     String address;
     int salary;
 
-    Employee(String name, int age, long phoneNumber, String address, int salary) {
+    EmployeeInheritance(String name, int age, long phoneNumber, String address, int salary) {
         this.name = name;
         this.age = age;
         this.phoneNumber = phoneNumber;
@@ -20,7 +20,7 @@ class EmployeeInheritance {
     }
 }
 
-class Officer extends Employee {
+class Officer extends EmployeeInheritance {
     String specialization;
 
     Officer(String name, int age, long phoneNumber, String address, int salary, String specialization) {
@@ -39,7 +39,7 @@ class Officer extends Employee {
     }
 }
 
-class Manager extends Employee {
+class Manager extends EmployeeInheritance {
     String department;
 
     Manager(String name, int age, long phoneNumber, String address, int salary, String department) {
@@ -58,7 +58,7 @@ class Manager extends Employee {
     }
 }
 
-public class EmployeeInheritance {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
