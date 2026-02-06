@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-class EmployeeInheritance {
+class Employee {
     String name;
     int age;
     long phoneNumber;
     String address;
     int salary;
 
-    EmployeeInheritance(String name, int age, long phoneNumber, String address, int salary) {
+    Employee(String name, int age, long phoneNumber, String address, int salary) {
         this.name = name;
         this.age = age;
         this.phoneNumber = phoneNumber;
@@ -20,7 +20,7 @@ class EmployeeInheritance {
     }
 }
 
-class Officer extends EmployeeInheritance {
+class Officer extends Employee {
     String specialization;
 
     Officer(String name, int age, long phoneNumber, String address, int salary, String specialization) {
@@ -39,7 +39,7 @@ class Officer extends EmployeeInheritance {
     }
 }
 
-class Manager extends EmployeeInheritance {
+class Manager extends Employee {
     String department;
 
     Manager(String name, int age, long phoneNumber, String address, int salary, String department) {
@@ -58,7 +58,7 @@ class Manager extends EmployeeInheritance {
     }
 }
 
-public class Main {
+public class EmployeeInheritance {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
