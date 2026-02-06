@@ -3,9 +3,17 @@ import java.util.Scanner;
 class EmployeeInheritance {
     String name;
     int age;
-    String phoneNumber;
+    long phoneNumber;
     String address;
     double salary;
+
+    Employee(String name, int age, long phoneNumber, String address, double salary) {
+        this.name = name;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.salary = salary;
+    }
 
     void printSalary() {
         System.out.println(salary);
@@ -14,47 +22,66 @@ class EmployeeInheritance {
 
 class Officer extends Employee {
     String specialization;
+
+    Officer(String name, int age, long phoneNumber, String address, double salary, String specialization) {
+        super(name, age, phoneNumber, address, salary);
+        this.specialization = specialization;
+    }
+
+    void display() {
+        System.out.println("Officer:");
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(phoneNumber);
+        System.out.println(address);
+        printSalary();
+        System.out.println(specialization);
+    }
 }
 
 class Manager extends Employee {
     String department;
+
+    Manager(String name, int age, long phoneNumber, String address, double salary, String department) {
+        super(name, age, phoneNumber, address, salary);
+        this.department = department;
+    }
+
+    void display() {
+        System.out.println("Manager:");
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(phoneNumber);
+        System.out.println(address);
+        printSalary();
+        System.out.println(department);
+    }
 }
 
-public class Experiment43 {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Officer officer = new Officer();
-        officer.name = sc.nextLine();
-        officer.age = Integer.parseInt(sc.nextLine());
-        officer.phoneNumber = sc.nextLine();
-        officer.address = sc.nextLine();
-        officer.salary = Double.parseDouble(sc.nextLine());
-        officer.specialization = sc.nextLine();
+        String oName = sc.nextLine();
+        int oAge = Integer.parseInt(sc.nextLine());
+        long oPhone = Long.parseLong(sc.nextLine());
+        String oAddress = sc.nextLine();
+        double oSalary = Double.parseDouble(sc.nextLine());
+        String specialization = sc.nextLine();
 
-        Manager manager = new Manager();
-        manager.name = sc.nextLine();
-        manager.age = Integer.parseInt(sc.nextLine());
-        manager.phoneNumber = sc.nextLine();
-        manager.address = sc.nextLine();
-        manager.salary = Double.parseDouble(sc.nextLine());
-        manager.department = sc.nextLine();
+        Officer officer = new Officer(oName, oAge, oPhone, oAddress, oSalary, specialization);
 
-        System.out.println("Officer:");
-        System.out.println(officer.name);
-        System.out.println(officer.age);
-        System.out.println(officer.phoneNumber);
-        System.out.println(officer.address);
-        System.out.println((int) officer.salary);
-        System.out.println(officer.specialization);
+        String mName = sc.nextLine();
+        int mAge = Integer.parseInt(sc.nextLine());
+        long mPhone = Long.parseLong(sc.nextLine());
+        String mAddress = sc.nextLine();
+        double mSalary = Double.parseDouble(sc.nextLine());
+        String department = sc.nextLine();
 
-        System.out.println("Manager:");
-        System.out.println(manager.name);
-        System.out.println(manager.age);
-        System.out.println(manager.phoneNumber);
-        System.out.println(manager.address);
-        System.out.println((int) manager.salary);
-        System.out.println(manager.department);
+        Manager manager = new Manager(mName, mAge, mPhone, mAddress, mSalary, department);
+
+        officer.display();
+        manager.display();
 
         sc.close();
     }
